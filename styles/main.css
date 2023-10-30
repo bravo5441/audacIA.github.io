@@ -1,0 +1,256 @@
+
+
+  
+        @font-face {
+            font-family: 'MiFuente';
+            src: url('PressStart2P-Regular.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'MiFuente', sans-serif;
+        }
+
+
+        .robot-container {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .robot-hand {
+            height: 85%;
+            width: 88%;    
+
+        }
+
+        .player-container {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2#message {
+            font-family: 'MiFuente', sans-serif;
+            font-size: 2vw;
+        }
+       
+        /*
+        video#player-video {
+            transform: scaleX(1.2);
+        }
+        */
+        .robot-containers {
+            height: 85%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .player-hand-container {
+            right: 0;
+            top: 0;
+        }
+
+        .player-hand,
+        .player-hand-container {
+            display: none;
+            height: 100px;
+            position: absolute;
+            width: 100px;
+        }
+
+        .player-hand {
+            font-size: 42px;
+            line-height: 100px;
+            right: 1px;
+            text-align: center;
+            top: 2px;
+        }
+
+        .player-hand-zoom {
+            -webkit-animation: handZoom .5s;
+            animation: handZoom .5s;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+/*
+                .robot-continer {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    background: linear-gradient(45deg, red, green, blue);
+                    background-size: 400% 400%;
+                    border-radius: 10px;
+                    animation: marcoAnimado 8s linear infinite;
+                } */
+
+        .timer-ring-circle {
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-transition: stroke-dashoffset .1s;
+            transition: stroke-dashoffset .1s;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Centra verticalmente los elementos en el eje Y */
+            justify-content: center; /* Centra horizontalmente los elementos en el eje X */
+            
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ff-8bit {
+            font-size: 1.75em;
+            margin: 10px 0;
+            font-family: 'MiFuente', sans-serif;
+        }
+
+        .instructions {
+            font-size: 1.125em;
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'MiFuente', sans-serif;
+        }
+        .game-container {
+            -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: -6px auto;
+    
+        }
+        .game-container {
+            
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+    
+        .player1,
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .player-video,
+        .avatar {
+            width: 100%;
+        }
+        .player-video,.avatar {
+
+            
+            height: 85%;
+            
+
+
+}
+
+        .player-hand-container {
+            position: relative;
+            margin-top: 10px;
+        }
+
+       
+        .swal2-popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #ffffff;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            width: 50%;
+            height: 50%;
+        }
+
+       
+        .swal2-title {
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        .timer-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        .nick {
+            font-size: 1.5vw;
+            font-family: 'MiFuente', sans-serif;
+        }
+
+        .score {
+            font-family: 'MiFuente', sans-serif;
+            font-size: 1.5vw;
+        }
+   .score1,score2{
+    font-size: 2vw;
+   }
+       
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        element.style {
+            height: 1%;
+        }
+        .vsimage {
+            max-width: 100%;
+            width: 50%;
+            height: auto;
+            display: block;
+            margin-top: 20%;
+            margin-left: 26%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        img {
+            overflow-clip-margin: content-box;
+            overflow: clip;        
+        }
+        #img1{overflow-clip-margin: content-box;
+            overflow: clip; 
+
+        }
+      

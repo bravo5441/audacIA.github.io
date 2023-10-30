@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Piedra, papel o tijeras</title>
+    <link rel="icon" href="./favicon.png">
+    <script defer="defer" src="./js/runtime.bundle.js"></script>
+    <script defer="defer" src="./js/main.bundle.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="styles\main.css">
+    <style>
+        body {
+            font-family: MiFuente, sans-serif;
+            color: white;
+            background-image: url('assets/elfondo.png');
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script>
+        function mostrarAlerta() {
+            Swal.fire({
+                title: 'Ganaste',
+                timer: 2000,
+                showConfirmButton: false,
+                didOpen: () => {
+                    const b = Swal.getHtmlContainer().querySelector('b');
+                    if (b) {
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft();
+                        }, 100);
+                    }
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+        }
+
+        function mostrarAlerta2() {
+            Swal.fire({
+                title: 'Ganó Alex',
+                timer: 2000,
+                showConfirmButton: false,
+                didOpen: () => {
+                    const b = Swal.getHtmlContainer().querySelector('b');
+                    if (b) {
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft();
+                        }, 100);
+                    }
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+        }
+        var timerInterval;
+
+        function c() {
+            const targetNode = document.getElementById('score1');
+            const targetNode2 = document.getElementById('score2');
+
+            if (targetNode) {
+                var modal = document.getElementById("myModal");
+                var span = document.querySelector(".close");
+
+                if (targetNode.textContent == "3") {
+                    mostrarAlerta();
+                    setTimeout(function () {
+                        window.location.href = 'http://localhost:8000/index1.html';
+                        
+                        //window.location.href = 'http://127.0.0.1:5500/index1.html';
+                    }, 2500);
+                }
+
+                if (targetNode2.textContent == "3") {
+                    mostrarAlerta2();
+                    setTimeout(function () {
+                        window.location.href = 'http://localhost:8000/index1.html';
+                    }, 2500);
+                }
+            }
+        }
+
+        const q = setInterval(c, 1);
+
+    </script>
+    <script>
+       function ready() {
+
+            var messageDiv = document.getElementById("message");
+            var robot = document.getElementById("robot");
+            var messageContentText = messageDiv.textContent;
+
+            if (messageContentText === "Preparado!") {
+
+                robot.src = "assets/paja.gif"
+                clearInterval(x);
+
+
+            }
+        }
+
+       var x = setInterval(ready, 1000)
+
+        /*
+        function ci() {
+
+
+            var messageDiv = document.getElementById("message");
+            var messageContentText = messageDiv.textContent;
+            var robot = document.getElementById("robot");
+
+            if (messageContentText == "Presiona cualquier tecla para empezar") {
+
+
+                if (robot.src === "assets/paja.gif") {
+                    setTimeout(robot.src = "assets/saludo.gif", 2000)
+                }
+
+            }
+        }
+        */
+        //var y = setInterval(ci, 10000)
+
+
+    </script>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const playerHand = document.querySelector('#player-hand');
+            const w = document.querySelector('.player-video')
+            // Seleccionar el elemento "player-hand" que deseas observar
+
+
+            // Crear una nueva instancia del Mutation Observer
+            const observer = new MutationObserver(function (mutationsList) {
+                // Esta función se ejecutará cuando ocurran cambios en el elemento observado
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        // Verificar si el tipo de mutación es 'childList' (cambio en el contenido)
+                        // Realizar aquí las acciones que deseas cuando el contenido cambie
+
+
+                        w.style.border = "1px solid green"
+                        setTimeout(function () {
+                            w.style.border = ""; // Esto quita el borde
+                        }, 3400); // 5000 milisegundos = 5 segundos
+                        
+                    }
+                }
+            });
+
+            // Configurar qué tipo de mutaciones deseas observar
+            const config = { childList: true }
+
+            // Iniciar la observación en el elemento "player-hand" con la configuración especificada
+            observer.observe(playerHand, config)
+
+
+        });
+
+    </script>
+    <script>
+        function asd() {
+            var a = document.querySelector("#robot-hand")
+            var aa = document.querySelector("#robot")
+            var aaa = document.querySelector("#message")
+            var i = aaa.textContent
+            var x = a.src
+            var y = aa.src
+            var palabra = "Preparado!"
+            var palabra1 = "Listos!"
+            var palabra2 = "Haz tu movimiento!!"
+            var palabra3 = "Listos"
+
+            if (x) {
+
+                var p = ewq(x)
+                var pp = ewq(y)
+
+                if (pp != p && (i != palabra && i != palabra1 && i != palabra2 && i != palabra3)) {
+                    aa.src = p
+
+                } else if (pp == p && ((i == palabra || i == palabra1 || i == palabra2)) && aa.src != "assets/paja.gif") {
+                    aa.src = "assets/paja.gif"
+                    a.src = ""
+                }
+
+            }
+
+            function ewq(x) {
+                var qq = x.split('/')
+                var l = qq[qq.length - 1]
+
+
+                return `assets/${l}`
+            }
+        }
+
+        const qqqq = setInterval(asd, 100) 
+    </script>
+    <script>
+var tiempo =  Math.floor(Math.random() * (28000 - 14000 + 1)) + 14000
+
+       function animation(){
+                var cacho = ["1", "2"];
+                var texto = document.getElementById('message').textContent;
+                var robot = document.getElementById("robot");
+                if (texto === 'muestra tu mano para comenzar') {
+                    var ran = Math.floor(Math.random() * 2) + 1;
+                    robot.src="/assets/"+ran+".gif";
+                    setTimeout(function () {robot.src="assets/iddle.gif"}, 12002)
+                    console.log(""+tiempo)
+                    
+                    
+                } 
+
+}
+var a=0;
+
+    function abc(){
+            
+            var texto = document.getElementById('message').textContent;
+            var robot = document.getElementById("robot");
+        console.log(robot.src+ "aaaaaaaaaaaaaaaaaaaaaaaa")
+            if(texto == "Haz tu movimiento!!" && (robot.src == "http://localhost:8000/assets/paja.gif" || robot.src == "http://localhost:8000/assets/pregunta.gif" || robot.src == "http://127.0.0.1:8000/assets/paja.gif" || robot.src == "hhttp://127.0.0.1:8000/assets/pregunta.gif")){
+                //console.log("primer");
+                a = a+1;
+
+                if(a==3){
+                    //console.log("segun");
+                    clearInterval(o); 
+                    robot.src="assets/pregunta.gif";
+                    setTimeout(function () {window.location.href = 'http://127.0.0.1:8000/index1.html';}, 4500)
+                }else{
+                    //console.log("jelse");
+                    robot.src="assets/pregunta.gif";
+                    setTimeout(function () {robot.src="assets/paja.gif"}, 4500)
+                }
+            }
+        }
+var h =setInterval(animation, tiempo);
+var o = setInterval(abc, 10000);
+
+        </script>
+</head>
+
+<body>
+
+    <div id="root">
+        <h1 class="ff-8bit"> JUGUEMOS </h1>
+        <p class="instructions">Piedra ✊ papel 🤚 tijera ✌</p>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="game-container left">
+                    <div class="player1">
+                        <h2 class="player-headline"><span class="nick">YO</span> <span class="score"
+                                id="score1">0</span>
+                        </h2>
+                        <div class="player-container">
+                            <video id="player-video" class="player-video" poster="assets/human.png" playsinline></video>
+                            <div class="player-hand-container">
+                                <div id="player-hand" class="player-hand"></div>
+                                <svg id="timer-ring" class="timer-ring" height="100" width="100">
+                                    <circle class="timer-ring-circle" stroke-width="6" stroke="white" fill="transparent"
+                                        r="38" cx="50" cy="50" />
+                                    <circle id="timer-ring-circle" class="timer-ring-circle" stroke-width="6"
+                                        stroke="blue" fill="transparent" r="38" cx="50" cy="50" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="vsimage" src="assets/vs.png" />
+                </div>
+                
+                <div class="game-container right">
+                    <div class="player">
+                        <h2 class="player-headline"><span class="nick">Alex </span> <span class="score"
+                                id="score2">0</span>
+                        </h2>
+                        <div class="robot-containers">
+                            <img id="robot" class="avatar" src="assets/iddle.gif" alt="">
+                            <img id="robot-hand" class="avatar" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="messages">
+            <h2 id="message" class="message-text message-fadeInOut"></h2>
+        </div>
+    </div>
+</body>
+
+</html>
